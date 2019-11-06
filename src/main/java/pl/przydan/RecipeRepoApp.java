@@ -4,10 +4,10 @@ package pl.przydan;
  * Hello world!
  *
  */
-public class App 
+public class RecipeRepoApp
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+
     }
 }
