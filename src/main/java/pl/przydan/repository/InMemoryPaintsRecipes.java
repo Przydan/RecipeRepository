@@ -1,39 +1,28 @@
 package pl.przydan.repository;
 
-import pl.przydan.paint.Paint;
-import pl.przydan.paint.PaintNames;
+import pl.przydan.paints.Paint;
+import pl.przydan.paints.PaintNames;
+import pl.przydan.receptura.Recipe;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InMemoryPaintsRecipes implements RepositoryInterface{
-
-    private Map<String, Map<PaintNames, Double>> paintsRecipesRepo;
-    private Map<PaintNames, Double> paintRecipe;
+    private List<Paint> paints = new ArrayList<>();
+    private List<Recipe> recipes = new ArrayList<>();
 
     public InMemoryPaintsRecipes() {
-        paintRecipe = new LinkedHashMap<>();
-        paintsRecipesRepo = new LinkedHashMap<>();
+
+        paints.add(new Paint(PaintNames.YELLOW, 2.5d));
+        paints.add(new Paint(PaintNames.GREEN_CHESPA, 1.5d));
+        paints.add(new Paint(PaintNames.PROCESS_BLUE, 7.5d));
+        paints.add(new Paint(PaintNames.WARM_RED, 0.5d));
+
+        recipes.add(new Recipe("355", paints));
+        recipes.add(new Recipe("300", paints));
     }
 
 
-    @Override
-    public Map<String, Map<PaintNames, Double>> add(Paint paint) {
-        return null;
-    }
 
-    @Override
-    public Map<String, Map<PaintNames, Double>> delete(Paint paint) {
-        return null;
-    }
 
-    @Override
-    public Map<String, Map<PaintNames, Double>> update(Paint paint) {
-        return null;
-    }
-
-    @Override
-    public Map<String, Map<PaintNames, Double>> print(Paint paint) {
-        return null;
-    }
 }
